@@ -31,12 +31,11 @@ int main (int argc, char* argv[]) {
     }
 
     //print host information
-    //char *ip = inet_ntoa(((struct in_addr *) hostinfo->h_addr)->s_addr);
-
+    char *ip = inet_ntoa(*(struct in_addr *)hostinfo->h_addr);
     printf("Hostname: %s\n", hostinfo->h_name);
     printf("Address type #: %d\n", hostinfo->h_addrtype);
     printf("Address length: %d\n", hostinfo->h_length);
-    //printf("Address ip: %d\n", ip);
+    printf("Host IP: %s\n", ip);
      
     //socket creates an endpoint for communication and returns a descriptor.  
     //socket(int domain, int type, int protocol)
